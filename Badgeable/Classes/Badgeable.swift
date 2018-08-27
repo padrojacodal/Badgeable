@@ -58,7 +58,11 @@ public extension Badgeable {
     /// Badgable will work only if UIBarButtonItem uses customView.
     private mutating func presentBadge() {
         // Configure badge label
-        badgeLabel.text = "\(badgeCount)"
+        if badgeCount > 99 {
+            badgeLabel.text = "99+"
+        } else {
+            badgeLabel.text = "\(badgeCount)"
+        }
         badgeLabel.sizeToFit()
         var labelFrame = badgeLabel.frame
         labelFrame.size.width += 4
@@ -88,7 +92,7 @@ public extension Badgeable {
     /// Returns calculated CGRect.
     private func positionedFrame(badgeLabel: UILabel, to superView: UIView) -> CGRect {
         var frame = badgeLabel.frame
-        frame.origin.x = superView.frame.size.width - frame.size.width / 2.0
+        frame.origin.x = (superView.frame.size.width - frame.size.width / 2.0) - 10.0
         frame.origin.y = -frame.size.height / 2.0
         return frame
     }
@@ -98,7 +102,7 @@ public extension Badgeable {
         let label = UILabel()
         label.clipsToBounds = true
         label.font = UIFont.systemFont(ofSize: 10.0)
-        label.backgroundColor = UIColor.red
+        label.backgroundColor = UIColor(red: 0.027, green: 0.792, blue: 0.498, alpha: 1.0)
         label.textColor = UIColor.white
         label.textAlignment = .center
         return label
