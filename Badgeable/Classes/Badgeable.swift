@@ -102,7 +102,7 @@ public extension Badgeable {
         let label = UILabel()
         label.clipsToBounds = true
         label.font = UIFont.systemFont(ofSize: 10.0)
-        label.backgroundColor = UIColor(red: 0.027, green: 0.792, blue: 0.498, alpha: 1.0)
+        label.backgroundColor = UIColor(red: 124/255, green: 167/255, blue: 255/255, alpha: 1.0)
         label.textColor = UIColor.white
         label.textAlignment = .center
         return label
