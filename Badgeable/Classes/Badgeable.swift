@@ -92,8 +92,8 @@ public extension Badgeable {
     /// Returns calculated CGRect.
     private func positionedFrame(badgeLabel: UILabel, to superView: UIView) -> CGRect {
         var frame = badgeLabel.frame
-        frame.origin.x = (superView.frame.size.width - frame.size.width / 2.0) - 10.0
-        frame.origin.y = -frame.size.height / 2.0
+        frame.origin.x = 10
+        frame.origin.y = -8
         return frame
     }
     
